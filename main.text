@@ -1,0 +1,32 @@
+To update the Python version on your Raspberry Pi from 3.6.9 to 3.8.0, you can follow these steps:
+
+Update your package lists:
+sudo apt update
+
+Install the required dependencies:
+sudo apt install build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
+
+Download the Python 3.8.0 source code:
+cd ~
+wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+
+Extract the source code:
+tar -xf Python-3.8.0.tgz
+
+Navigate to the extracted directory:
+cd Python-3.8.0
+
+Configure the build:
+./configure --enable-optimizations
+
+Build Python:
+make -j4
+
+Install the updated Python version:
+sudo make altinstall
+
+Verify that Python 3.8.0 is installed:
+python3.8 --version
+
+#youtube link
+https://www.youtube.com/watch?v=Cj7NhuLkvdQ
